@@ -3,11 +3,7 @@ package ZiplocSAS.domain.structures;
 import ZiplocSAS.domain.model.Usuario;
 import java.util.*;
 
-/**
- * Arbol AVL de fidelizacion ordenado por puntos y, como desempate, por ID.
- * El indice hash auxiliar permite localizar un usuario por ID en O(1) promedio,
- * mientras el AVL conserva consultas ordenadas por rango en O(log n + k).
- */
+
 public class ArbolFidelizacion {
     private Node root;
     private int size;
@@ -80,10 +76,7 @@ public class ArbolFidelizacion {
         return resultado;
     }
 
-    /**
-     * Posicion (1 = primero) del cliente en el ranking descendente por puntos.
-     * Usa los tamanos de subarbol: O(log n). Devuelve 0 si no esta indexado.
-     */
+  
     public synchronized int posicionRanking(String usuarioId) {
         Node objetivo = indicePorId.get(usuarioId);
         if (objetivo == null) return 0;

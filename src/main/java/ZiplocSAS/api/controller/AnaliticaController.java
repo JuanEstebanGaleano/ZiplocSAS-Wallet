@@ -28,7 +28,7 @@ public class AnaliticaController {
     private final ServicioAnalitica servicioAnalitica;
 
     @GetMapping("/reporte/{usuarioId}")
-    
+
     public ResponseEntity<ApiResponse<ReporteUsoDTO>> generarReporte(@PathVariable String usuarioId) {
         return ResponseEntity.ok(ApiResponse.<ReporteUsoDTO>builder()
                 .success(true)
