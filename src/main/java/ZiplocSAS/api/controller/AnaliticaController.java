@@ -19,9 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-/**
- * Expone reportes, rankings y vistas de analitica para el frontend.
- */
+
 
 @RestController
 @RequestMapping("/analitica")
@@ -30,12 +28,7 @@ public class AnaliticaController {
     private final ServicioAnalitica servicioAnalitica;
 
     @GetMapping("/reporte/{usuarioId}")
-    /**
-     * Genera un resumen de uso para un usuario especifico.
-     *
-     * @param usuarioId identificador del usuario analizado.
-     * @return reporte con volumen, promedio y rango temporal de transacciones.
-     */
+    
     public ResponseEntity<ApiResponse<ReporteUsoDTO>> generarReporte(@PathVariable String usuarioId) {
         return ResponseEntity.ok(ApiResponse.<ReporteUsoDTO>builder()
                 .success(true)
