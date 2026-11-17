@@ -76,7 +76,7 @@ public class ArbolFidelizacion {
         return resultado;
     }
 
-  
+
     public synchronized int posicionRanking(String usuarioId) {
         Node objetivo = indicePorId.get(usuarioId);
         if (objetivo == null) return 0;
